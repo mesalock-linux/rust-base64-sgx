@@ -10,13 +10,19 @@ keywords = ["base64", "utf8", "encode", "decode"]
 categories = ["encoding"]
 license = "MIT/Apache-2.0"
 edition = "2018"
+exclude = ["/sgx/*"]
 
 [[bench]]
 name = "benchmarks"
 harness = false
 
+[features]
+default = ["mesalock_sgx"]
+mesalock_sgx = ["sgx_tstd"]
+
 [dependencies]
-byteorder = "1.2.6"
+byteorder = { git = "https://github.com/mesalock-linux/byteorder-sgx" }
+sgx_tstd = { rev = "v1.0.8", git = "https://github.com/baidu/rust-sgx-sdk.git", optional = true }
 
 [dev-dependencies]
 criterion = "0.2"

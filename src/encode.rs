@@ -1,3 +1,4 @@
+use std::prelude::v1::*;
 use crate::{chunked_encoder, Config, STANDARD};
 use byteorder::{BigEndian, ByteOrder};
 

@@ -1,3 +1,4 @@
+use std::prelude::v1::*;
 use crate::{
     encode::{add_padding, encode_to_slice},
     Config,
